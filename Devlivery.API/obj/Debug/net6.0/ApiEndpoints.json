@@ -8,29 +8,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Nome",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Email",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Senha",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "SenhaConfirmacao",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Telefone",
-        "Type": "System.String",
-        "IsRequired": false
+        "Name": "usuarioRegistro",
+        "Type": "Devlivery.Model.Domain.Requisicao.RegistroUsuarioModel",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -44,12 +24,23 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Email",
-        "Type": "System.String",
-        "IsRequired": false
-      },
+        "Name": "efetuarLogin",
+        "Type": "Devlivery.Model.Domain.Requisicao.EfetuarLoginModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Devlivery.API.Controllers.AuthController",
+    "Method": "ObterUsuarioPorEmail",
+    "RelativePath": "api/identidade/obter-usuario-por-email",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
       {
-        "Name": "Senha",
+        "Name": "email",
         "Type": "System.String",
         "IsRequired": false
       }
@@ -65,39 +56,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Titulo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Objetivo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Descricao",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Foto",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Valor",
-        "Type": "System.Single",
-        "IsRequired": false
-      },
-      {
-        "Name": "Link",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "UsuarioId",
-        "Type": "System.String",
-        "IsRequired": false
+        "Name": "projeto",
+        "Type": "Devlivery.Model.Domain.Requisicao.CadastroProjetoModel",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -121,6 +82,16 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "Devlivery.API.Controllers.ProjetoController",
+    "Method": "ObterCatalogoProjetos",
+    "RelativePath": "api/projeto/obter-catalogo-projetos",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "Devlivery.API.Controllers.ProjetoController",

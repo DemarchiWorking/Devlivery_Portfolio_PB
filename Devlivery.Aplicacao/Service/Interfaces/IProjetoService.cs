@@ -11,7 +11,10 @@ namespace Devlivery.Aplicacao.Service.Interfaces
 {
     public interface IProjetoService
     {
-        Task<Resposta<dynamic>> CadastrarProjeto(CadastroProjetoModel projeto);
+        Task<Resposta<dynamic>> CadastrarProjeto(CadastroProjetoModel cadastroProjetoModel, string jwt);
+
+        Task<Resposta<dynamic>> ObterCatalogoService();
+
 
         Task<Resposta<dynamic>> EditarProjeto(EditarProjetoModel editarProjetoModel);
     }

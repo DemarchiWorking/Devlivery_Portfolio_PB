@@ -17,14 +17,18 @@ namespace Devlivery.Aplicacao.Service.Interfaces
 {
     public interface IUsuarioService
     {
-        Task<Resposta<dynamic>> CadastrarUsuario(Usuario usuario);
-        Task<Resposta<dynamic>> Login(EfetuarLoginModel login);
+        Task<Resposta<string>> CadastrarUsuario(Usuario usuario);
+        Task<Resposta<string>> Login(EfetuarLoginModel login);
         Task AdicionarClaim(Usuario user, string type, string value);
         Task<IdentityUser> ObetrUsuarioPorId(string userId);
         Task<IEnumerable<Usuario>> ObterTodos();
         //IdentityUser BuscarP>orEmail(string email);
         UsuarioToken GerarToken(EfetuarLoginModel login);
+        Task<Resposta<string>> ObterUsuarioPorEmailService(string email);
+
+
         Usuario BuscarPorEmail(string email);
+        ClaimsPrincipal ValidateToken(string token);
 
     }
 }

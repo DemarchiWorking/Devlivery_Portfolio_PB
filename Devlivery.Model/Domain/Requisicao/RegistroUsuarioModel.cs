@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Devlivery.Model.Domain.Requisicao
 {
     public class RegistroUsuarioModel
     {
-
         public string Nome { get; set; }
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         [EmailAddress(ErrorMessage = "O campo {0} está em formato inválido")]
@@ -21,7 +15,7 @@ namespace Devlivery.Model.Domain.Requisicao
 
 
         [Compare("Senha", ErrorMessage = "As senhas não conferem.")]
-        public string SenhaConfirmacao { get; set; }
+        public string ConfirmarSenha { get; set; }
         public string Telefone { get; set; }
     }
 }

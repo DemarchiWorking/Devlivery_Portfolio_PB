@@ -36,25 +36,25 @@ namespace Devlivery.Aplicacao.Service
             _gerenciadorAcesso = gerenciadorAcesso;
             _accessor = accessor;
         }
-        public async Task<Resposta<dynamic>> CadastrarProjeto(CadastroProjetoModel cadastroProjetoModel)
+        public async Task<Resposta<dynamic>> CadastrarProjeto(CadastroProjetoModel cadastroProjetoModel, string jwt)
         {
             try
             {
-                var autoriza = _accessor.HttpContext.Request.Headers["Authorization"].ToString();
+                //var autoriza = _accessor.HttpContext.Request.Headers["Authorization"].ToString();
                 //var zz = await this._context.Usuarios.FindAsync();
                 // var email = User.FindFirst("sub")?.Value;
                 //var tz = _gerenciadorUsuario.GetUserId();
                 var projeto = new Projeto()
                 {
                     ProjetoId = Guid.NewGuid(),
-                    Titulo = cadastroProjetoModel.Titulo,
-                    Valor = cadastroProjetoModel.Valor, 
+                    Titulo = cadastroProjetoModel.titulo,
+                    Valor = cadastroProjetoModel.valor, 
                     Criacao = DateTime.Now,
-                    Descricao = cadastroProjetoModel.Descricao,
-                    Foto = cadastroProjetoModel.Foto,
-                    Link = cadastroProjetoModel.Link,
-                    Objetivo = cadastroProjetoModel.Objetivo,
-                    UsuarioId = cadastroProjetoModel.UsuarioId,
+                    Descricao = cadastroProjetoModel.descricao,
+                    Foto = cadastroProjetoModel.foto,
+                    Link = cadastroProjetoModel.link,
+                    Objetivo = cadastroProjetoModel.objetivo,
+                    UsuarioId = cadastroProjetoModel.usuarioId,
                 };
 
                 _context.Projeto.Add(projeto);
@@ -99,6 +99,68 @@ namespace Devlivery.Aplicacao.Service
             };
         }
 
+        public async Task<Resposta<dynamic>> ObterCatalogoService()
+        {
+            try
+            {
+                //var autoriza = _accessor.HttpContext.Request.Headers["Authorization"].ToString();
+                //var zz = await this._context.Usuarios.FindAsync();
+                // var email = User.FindFirst("sub")?.Value;
+                //var tz = _gerenciadorUsuario.GetUserId();
+
+
+                var projetos = _context.Projeto;
+
+                var query = projetos.Select(p => new Projeto()
+                {
+                    Titulo = p.Titulo,
+                    Descricao = p.Descricao,
+                    Foto = p.Foto,
+                    Criacao = p.Criacao,
+                    UsuarioId = p.UsuarioId,
+                    Usuario = p.Usuario
+                }).ToList();
+
+                //var resposta = _context.SaveChanges();
+                if (query.Count > 0)
+                {
+
+                    return new Resposta<dynamic>()
+                    {
+                        Titulo = "Usuário cadastrado com sucesso.",
+                        Dados = new List<dynamic>() { "OK" },
+                        Status = 200,
+                        Sucesso = true
+                    };
+                }
+                else
+                {
+                    return new Resposta<dynamic>()
+                    {
+                        Titulo = "Erro ao cadastrar com usuario",
+                        Status = 400,
+                        Sucesso = false
+                    };
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                Console.WriteLine(e.StackTrace);
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e.InnerException);
+                Console.WriteLine(e.Source);
+                Console.WriteLine(e.GetObjectData);
+                //_logger.Error(e, $"[ListarServicos] Fatal error on ListarServicos");
+            }
+            return new Resposta<dynamic>()
+            {
+                Titulo = "Erro 500.",
+                Dados = null,
+                Status = 500,
+                Sucesso = false
+            };
+        }
         public async Task<Resposta<dynamic>> EditarProjeto(EditarProjetoModel editarProjetoModel)
         {
             try

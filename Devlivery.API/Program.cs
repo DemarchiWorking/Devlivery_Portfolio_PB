@@ -1,10 +1,5 @@
-using Devlivery.Aplicacao.Service.Interfaces;
-using Devlivery.Aplicacao.Service;
 using Devlivery.Infraestrutura;
 using Devlivery.API;
-using Microsoft.Extensions.Configuration;
-using Devlivery.API.Configuration;
-using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 IConfiguration configuracao = builder.Configuration;
@@ -25,15 +20,20 @@ var services = Startup.ConfiguraServicos(servicos).BuildServiceProvider();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseCors(x => x
+.AllowAnyMethod()
+.AllowAnyHeader()
+.SetIsOriginAllowed(origin => true) 
+.AllowCredentials());
 
 app.UseHttpsRedirection();
 app.UseRouting();
+app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 

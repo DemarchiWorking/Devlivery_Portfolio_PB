@@ -1,34 +1,15 @@
-﻿using Devlivery.Aplicacao.Service;
-using Devlivery.Aplicacao.Service.Interfaces;
+﻿using Devlivery.Aplicacao.Service.Interfaces;
 using Devlivery.Model.Domain.DAO;
 using Devlivery.Model.Domain.Requisicao;
-using Microsoft.AspNetCore.Identity;
+using Devlivery.Model.Domain.Resposta;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
-/*
- *        using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
-using Microsoft.AspNetCore.Identity;
-using System;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
-using SeuProjeto.Models; // Certifique-se de importar o namespace correto para o seu modelo de usuário
-using Microsoft.IdentityModel.Tokens;
- * */
+using Microsoft.EntityFrameworkCore;
 namespace Devlivery.API.Controllers
 {
     [Route("api/identidade")]
     public class AuthController : ControllerBase
     {
         private readonly IUsuarioService _usuarioService;
-        //private readonly SignInManager<Usuario> _gerenciadorAcesso;
-        //private readonly UserManager<Usuario> _gerenciadorUsuario;
         private readonly IConfiguration _config;
 
             public AuthController(
@@ -37,20 +18,16 @@ namespace Devlivery.API.Controllers
             {
                 _usuarioService = usuarioService;
                 _config = config;
-                //_gerenciadorUsuario = gerenciadorUsuario;
-                //_gerenciadorAcesso = gerenciadorAcesso;
         }
 
             [HttpPost("cadastrar-usuario")]
-            public async Task<IActionResult> CadastrarUsuario(RegistroUsuarioModel usuarioRegistro)
+            public async Task<IActionResult> CadastrarUsuario([FromBody] RegistroUsuarioModel usuarioRegistro)
             {
                 if (!ModelState.IsValid)
                     return BadRequest(ModelState);
 
                 Usuario usuario = new Usuario()
                 {
-                    Id = Guid.NewGuid().ToString(),
-                    UsuarioId = Guid.NewGuid(),
                     UserName = usuarioRegistro.Email,
                     Nome = usuarioRegistro.Nome,
                     Email = usuarioRegistro.Email,
@@ -63,52 +40,75 @@ namespace Devlivery.API.Controllers
                     PasswordHash = Guid.NewGuid().ToString()                    
                 };
 
-                var result = await _usuarioService.CadastrarUsuario(usuario);
+                var resultado = await _usuarioService.CadastrarUsuario(usuario);
                 
-                if (result.ToString() != "Succeeded")
+                if (resultado.Sucesso == true)
                 {
                     EfetuarLoginModel efetuarLoginModel = new EfetuarLoginModel()
                     {
                          Email = usuarioRegistro.Email,
                          Senha = usuarioRegistro.Senha
                     };
-                        // Você pode adicionar outras lógicas aqui, como enviar um email de confirmação.
+
                     return Ok(_usuarioService.GerarToken(efetuarLoginModel));
                 }
-
+                else
+                {
+                    return BadRequest(resultado);
+                }
+   
                 //foreach (var error in result.Errors){ModelState.AddModelError(string.Empty, error.Description);}
 
-                return BadRequest(ModelState);
             }
 
             [HttpPost("fazer-login")]
-            public async Task<IActionResult> Login(EfetuarLoginModel usuarioLogin)
+            public async Task<IActionResult> Login([FromBody] EfetuarLoginModel efetuarLogin)
             {
-                if (!ModelState.IsValid)
-                    return BadRequest(ModelState);
 
-                var result = await _usuarioService.Login(usuarioLogin);
+                var resultado = await _usuarioService.Login(efetuarLogin);
                 //await _signInManager.PasswordSignInAsync(usuarioLogin.Email, usuarioLogin.Senha, false, true);
                 //var result = _usuarioService.CadastrarUsuario(usuario);
 
-                if (result?.Sucesso == true)
+                
+                if (resultado?.Sucesso == true)
                 {
-                    // Você pode retornar informações adicionais, como o token JWT.
-                    return Ok();
-                }
+                    EfetuarLoginModel efetuarLoginModel = new EfetuarLoginModel()
+                    {
+                        Email = efetuarLogin.Email,
+                        Senha = efetuarLogin.Senha
+                    };
 
-                //ModelState.AddModelError(string.Empty, "Falha ao fazer login. Verifique suas credenciais.");
-                return BadRequest(ModelState);
+                    return Ok(_usuarioService.GerarToken(efetuarLoginModel));
+                }
+                return BadRequest(resultado);
             }
 
-        // Outros métodos, como logout, redefinição de senha, etc., podem ser adicionados aqui.
-        //[Authorize]
 
-        //private async Task<string> GerarToken(string email)
-        //{}
+        [HttpPost("obter-usuario-por-email")]
+        public async Task<IActionResult> ObterUsuarioPorEmail(string email)
+        {
+            try
+            {
+                var resultado = await _usuarioService.ObterUsuarioPorEmailService(email);
+                return Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+            }
+
+
+            return null;
+        }
+
+
+                // Outros métodos, como logout, redefinição de senha, etc., podem ser adicionados aqui.
+                //[Authorize]
+
+                //private async Task<string> GerarToken(string email)
+                //{}
 
 
 
 
-    }
+        }
     }

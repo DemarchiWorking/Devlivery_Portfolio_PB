@@ -4,13 +4,16 @@ using Devlivery.Model.Domain.Auth;
 using Devlivery.Model.Domain.DAO;
 using Devlivery.Model.Domain.Requisicao;
 using Devlivery.Model.Domain.Resposta;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.IdentityModel.Tokens.Jwt;
@@ -43,60 +46,82 @@ namespace Devlivery.Aplicacao.Service
             _context = context;
             _configuration = configuration;
         }
-        public async Task<Resposta<dynamic>> CadastrarUsuario(Usuario usuario)
+        public async Task<Resposta<string>> CadastrarUsuario(Usuario usuario)
         {
             try
             {
-                bool existe = await _gerenciadorRole.RoleExistsAsync("administrador");
-                //if (existe == false){ }
-                var roleManager = await _gerenciadorRole.CreateAsync(new IdentityRole("usuario"));
-                
-                
                 // Criação de roles (papéis)
-                //await roleManager.CreateAsync(new IdentityRole("usuario"));
-                //var result = await _userManager.CreateAsync(user, usuarioRegistro.Senha);
-                var cadastro = await _gerenciadorUsuario.CreateAsync(usuario, usuario.Senha);
-                var role = await _gerenciadorUsuario.AddToRoleAsync(usuario, "usuario");
-                if (cadastro.Succeeded)
+                bool existeRoleAluno = await _gerenciadorRole.RoleExistsAsync("usuario");
+                if (existeRoleAluno == false)
                 {
-                    //int resultado = _context.SaveChaif (resultado == 1){}
-                    return new Resposta<dynamic>()
+                    await _gerenciadorRole.CreateAsync(new IdentityRole("usuario"));
+                    await _gerenciadorRole.CreateAsync(new IdentityRole("aluno"));
+
+                }
+
+                var cadastro = await _gerenciadorUsuario.CreateAsync(usuario, usuario.Senha);
+                if (usuario.Email.Contains("al.infnet"))
+                { await _gerenciadorUsuario.AddToRoleAsync(usuario, "aluno"); }
+                else
+                {
+                    await _gerenciadorUsuario.AddToRoleAsync(usuario, "usuario");//
+                }
+                if (cadastro!.Succeeded)
+                {
+                    List<string> dadoResposta = new List<string>
+                    {
+                        string.Join(", ", usuario)
+                    };
+
+                    return new Resposta<string>()
                     {
                         Titulo = "Usuário cadastrado com sucesso.",
-                        Dados = new List<dynamic>() { usuario.UsuarioId, usuario.Nome, usuario.Email, usuario.Telefone },
+                        Dados = dadoResposta,
                         Status = 200,
                         Sucesso = true
                     };
                 }
                 else
                 {
-                    return new Resposta<dynamic>()
+                    var erro = " ";
+                    foreach(var err in cadastro!.Errors)
                     {
-                        Titulo = "Erro ao cadastrar com usuario",
+                        erro += err.Code + " " + err.Description;
+                    }
+                   
+                    return new Resposta<string>()
+                    {
+                        Titulo = "Erro ao cadastrar com usuario:",
                         Status = 400,
-                        Sucesso = false
+                        Sucesso = false,
+                        Dados = new List<string>() { erro.ToString()
+                        }
                     };
                 }
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
-                Console.WriteLine(e.StackTrace);
-                Console.WriteLine(e.Message);
-                Console.WriteLine(e.InnerException);
-                Console.WriteLine(e.Source);
-                Console.WriteLine(e.GetObjectData);
+                List<string> erroCatch = new List<string>()
+                {
+                    e.ToString(),
+                    e.StackTrace!.ToString(),
+                    e.Message.ToString(),
+                    e.InnerException!.ToString(),
+                    e.Source!.ToString(),
+                    string.Join(" ", e!.GetObjectData)
+            };
+                return new Resposta<string>()
+                {
+                    Titulo = "Erro 500",
+                    Dados = erroCatch,
+                    Status = 500,
+                    Sucesso = false
+                };
                 //_logger.Error(e, $"[ListarServicos] Fatal error on ListarServicos");
             }
-            return new Resposta<dynamic>()
-            {
-                Titulo = "Erro 500.",
-                Dados = null,
-                Status = 500,
-                Sucesso = false
-            };
+           
         }
-        public async Task<Resposta<dynamic>> Login(EfetuarLoginModel login)
+        public async Task<Resposta<string>> Login(EfetuarLoginModel login)
         {
             try
             {
@@ -111,21 +136,28 @@ namespace Devlivery.Aplicacao.Service
 
                     if (usuario != null)
                     {
-                        return new Resposta<dynamic>()
+                        return new Resposta<string>()
                         {
                             Titulo = "Usuario logado com sucesso",
                             Status = 200,
-                            Dados = new List<dynamic>(){ usuario },
+                            Dados = new List<string>()
+                            { usuario.Id,
+                              usuario.Titulo,
+                              usuario.UserName,
+                              usuario.Email,
+                              usuario.Foto,
+                              usuario.Telefone
+                            },
                             Sucesso = true,
                         };
                     }
                     else
                     {
-                        return new Resposta<dynamic>()
+                        return new Resposta<string>()
                         {
                             Titulo = "Usuario nãO foi identificado",
-                            Status = 400,
-                            Dados = new List<dynamic>() { "" },
+                            Status = 204,
+                            Dados = new List<string>() { "" },
                             Sucesso = false,
                         };
 
@@ -133,27 +165,77 @@ namespace Devlivery.Aplicacao.Service
                 }
                 else
                 {
-                    return new Resposta<dynamic>() { Titulo = "ERRO" };
+                    return new Resposta<string>() { Titulo = autenticacao.ToString() };
                 }
             }
             catch (Exception e)
             {
                 //_logger.Error(e, $"[ListarServicos] Fatal error on ListarServicos");
             }
-            return new Resposta<dynamic>()
+            return new Resposta<string>()
             {
                 Titulo = "Erro 500",
                 Status = 500,
                 Dados = null,
                 Sucesso = false
-            };
+            };            
+        }
 
-            
+        public async Task<Resposta<string>> ObterUsuarioPorEmailService(string email)
+        {
+            try
+            {
+                //var cadastro = _gerenciadorUsuario.CreateAsync(usuario, usuario.Senha);if (cadastro.IsCompleted)}
+                var resposta = _context.Usuarios.FirstOrDefault(x => x.Email == email);
+
+                if (resposta != null)
+                {
+                    var usuario = new List<string>()
+                    {
+                        resposta.Email,
+                        resposta.Foto,
+                        resposta.Telefone,
+                        resposta.Nome,
+                        resposta.Titulo,
+                        resposta.PhoneNumber,
+                    };
+
+                    return new Resposta<string>()
+                    {
+                        Titulo = "Usuario encontrado com sucesso.",
+                        Status = 200,
+                        Dados = usuario,
+                        Sucesso = true
+                    };
+                }
+                else
+                {
+                    return new Resposta<string>()
+                    {
+                        Titulo = "Erro ao encontrar usuario.",
+                        Status = 204,
+                        Dados = null,
+                        Sucesso = false
+                    };
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return new Resposta<string>()
+            {
+                Titulo = "[ERRO:500] Ao tentar encontrar usuario.",
+                Status = 400,
+                Dados = null,
+                Sucesso = false
+            };
         }
 
 
-        //demarchialteracao alterar Usuario por userresponmsedto
-        public async Task<IEnumerable<Usuario>> ObterTodos()
+            //demarchialteracao alterar Usuario por userresponmsedto
+            public async Task<IEnumerable<Usuario>> ObterTodos()
         {
             var usuarios = new List<Usuario>();
             foreach (var user in _gerenciadorUsuario.Users)
@@ -269,6 +351,34 @@ namespace Devlivery.Aplicacao.Service
             return 0;
         }
 
+        public ClaimsPrincipal ValidateToken(string token)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes(_configuration["Jwt:key"]);
+
+            try
+            {
+                var principal = tokenHandler.ValidateToken(token, new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    ClockSkew = TimeSpan.Zero
+                }, out SecurityToken validatedToken);
+
+                var jwtToken = (JwtSecurityToken)validatedToken;
+
+                if (jwtToken == null || !jwtToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase))
+                    throw new SecurityTokenException("Invalid token");
+
+                return principal;
+            }
+            catch
+            {
+                return null;
+            }
+        }
     }
 
 }

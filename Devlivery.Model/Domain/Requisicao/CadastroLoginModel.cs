@@ -9,12 +9,13 @@ namespace Devlivery.Model.Domain.Requisicao
 {
     public class CadastroProjetoModel
     {
-        public string Titulo { get; set; }
-        public string Objetivo { get; set; }
-        public string Descricao { get; set; }
-        public string Foto { get; set; }
-        public float Valor { get; set; }
-        public string Link { get; set; }
-        public string UsuarioId { get; set; }
+        public string titulo { get; set; }
+        public string objetivo { get; set; }
+        public string descricao { get; set; }
+        public string foto { get; set; }
+        public float valor { get; set; }
+        public string link { get; set; }
+        public string usuarioId { get; set; }
+        public string jwt { get; set; }
     }
 }

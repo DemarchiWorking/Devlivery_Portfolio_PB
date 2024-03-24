@@ -10,19 +10,21 @@ using Devlivery.Aplicacao.Service.Interfaces;
 using Devlivery.Aplicacao.Service;
 using Devlivery.Model.Domain.DAO;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 namespace Devlivery.API
 {
     public class Startup
     {
-        public IConfiguration Configuration { get; }
+        public IConfiguration Configuracao { get; }
         public IServiceCollection Services { get; }
+        public dynamic Appsettings { get; }
+
+
         public Startup(
             IConfiguration configuration,
             IServiceCollection services)
         {
-            var test = ObterAppsettings();
-
-
         }
         public static IServiceCollection ConfiguraServicos(IServiceCollection services)
         {
@@ -41,7 +43,14 @@ namespace Devlivery.API
                 .AddEntityFrameworkStores<AppDbContext>()
                 .AddDefaultTokenProviders();
 
- 
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequireDigit = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequiredLength = 6; // Define o comprimento mínimo da senha
+            });
 
             services.AddAuthentication(options =>
             {
@@ -55,17 +64,43 @@ namespace Devlivery.API
                     ValidateAudience = true,
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
-                    ValidIssuer = "seu-issuer",
-                    ValidAudience = "seu-audience",
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("antonio-teste"))
+                    ValidIssuer = appsettings.GetValue<string>("TokenConfiguration:Issuer"),
+                    ValidAudience = appsettings.GetValue<string>("TokenConfiguration:Audience"),
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(appsettings.GetValue<string>("Jwt:Key")))
                 };
             });
 
             services.AddCors(options =>
             {
+                var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                                  policy =>
+                                  {
+                                      policy.WithOrigins("http://example.com",
+                                                          "http://www.contoso.com");
+                                  });
+            });
+
+
+            /*
+             *
+             *
+
+
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(builder =>
+                {
+                    builder.WithOrigins("http://localhost:4200")
+                           .AllowAnyMethod()
+                           .AllowAnyHeader();
+                });
+            });
+            services.AddCors(options =>
+            {
                 options.AddPolicy("Total",
                     builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
-            });
+            });*/
 
             return services;
         }
@@ -76,7 +111,16 @@ namespace Devlivery.API
                 .SetBasePath(Directory.GetCurrentDirectory())
                //.SetBasePath(hostEnvironment.ContentRootPath)
                .AddJsonFile("appsettings.json", true, true)
-               //.AddJsonFile($"appsettings.{hostEnvironment.EnvironmentName}.json", true, true)
+                //.AddJsonFile($"appsettings.{hostEnvironment.EnvironmentName}.json", true, true)
+                .Build();
+        }
+        public IConfiguration ObterAppsettingsDmc()
+        {
+            return new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+               //.SetBasePath(hostEnvironment.ContentRootPath)
+               .AddJsonFile("appsettings.json", true, true)
+                //.AddJsonFile($"appsettings.{hostEnvironment.EnvironmentName}.json", true, true)
                 .Build();
         }
 

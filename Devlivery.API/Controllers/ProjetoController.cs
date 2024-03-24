@@ -22,14 +22,30 @@ namespace Devlivery.API.Controllers
             //_gerenciadorUsuario = gerenciadorUsuario;
             //_gerenciadorAcesso = gerenciadorAcesso;
         }
-
         [HttpPost("cadastrar-projeto")]
-        public async Task<IActionResult> CadastrarProjeto(CadastroProjetoModel projeto)
+        [Authorize]
+        public async Task<IActionResult> CadastrarProjeto([FromBody]CadastroProjetoModel projeto)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var result = await _projetoService.CadastrarProjeto(projeto);
+            var result = await _projetoService.CadastrarProjeto(projeto, "");
+
+            if (result.ToString() != "Succeeded")
+            {
+                // Você pode adicionar outras lógicas aqui, como enviar um email de confirmação.
+                return Ok();
+            }
+            return BadRequest();
+        }
+
+        [HttpPost("obter-catalogo-projetos")]
+        public async Task<IActionResult> ObterCatalogoProjetos()
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var result = await _projetoService.ObterCatalogoService();
 
             if (result.ToString() != "Succeeded")
             {

@@ -1,0 +1,519 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A6FA731C-DAB3-46A2-9C47-21ECAC0747BB}|Devlivery.Aplicacao\\Devlivery.Aplicacao.csproj|c:\\users\\antonioeduardosilvei\\documents\\projetoblocoengenharia\\devliveryporfoliopbapi6\\devlivery\\devlivery.aplicacao\\service\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6FA731C-DAB3-46A2-9C47-21ECAC0747BB}|Devlivery.Aplicacao\\Devlivery.Aplicacao.csproj|solutionrelative:devlivery.aplicacao\\service\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B087CAF8-8396-4974-8551-5A98EE24C84E}|Devlivery.API\\Devlivery.API.csproj|c:\\users\\antonioeduardosilvei\\documents\\projetoblocoengenharia\\devliveryporfoliopbapi6\\devlivery\\devlivery.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B087CAF8-8396-4974-8551-5A98EE24C84E}|Devlivery.API\\Devlivery.API.csproj|solutionrelative:devlivery.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B087CAF8-8396-4974-8551-5A98EE24C84E}|Devlivery.API\\Devlivery.API.csproj|c:\\users\\antonioeduardosilvei\\documents\\projetoblocoengenharia\\devliveryporfoliopbapi6\\devlivery\\devlivery.api\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B087CAF8-8396-4974-8551-5A98EE24C84E}|Devlivery.API\\Devlivery.API.csproj|solutionrelative:devlivery.api\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B087CAF8-8396-4974-8551-5A98EE24C84E}|Devlivery.API\\Devlivery.API.csproj|c:\\users\\antonioeduardosilvei\\documents\\projetoblocoengenharia\\devliveryporfoliopbapi6\\devlivery\\devlivery.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B087CAF8-8396-4974-8551-5A98EE24C84E}|Devlivery.API\\Devlivery.API.csproj|solutionrelative:devlivery.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B087CAF8-8396-4974-8551-5A98EE24C84E}|Devlivery.API\\Devlivery.API.csproj|c:\\users\\antonioeduardosilvei\\documents\\projetoblocoengenharia\\devliveryporfoliopbapi6\\devlivery\\devlivery.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B087CAF8-8396-4974-8551-5A98EE24C84E}|Devlivery.API\\Devlivery.API.csproj|solutionrelative:devlivery.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B087CAF8-8396-4974-8551-5A98EE24C84E}|Devlivery.API\\Devlivery.API.csproj|c:\\users\\antonioeduardosilvei\\documents\\projetoblocoengenharia\\devliveryporfoliopbapi6\\devlivery\\devlivery.api\\controllers\\projetocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B087CAF8-8396-4974-8551-5A98EE24C84E}|Devlivery.API\\Devlivery.API.csproj|solutionrelative:devlivery.api\\controllers\\projetocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6FA731C-DAB3-46A2-9C47-21ECAC0747BB}|Devlivery.Aplicacao\\Devlivery.Aplicacao.csproj|c:\\users\\antonioeduardosilvei\\documents\\projetoblocoengenharia\\devliveryporfoliopbapi6\\devlivery\\devlivery.aplicacao\\service\\projetoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6FA731C-DAB3-46A2-9C47-21ECAC0747BB}|Devlivery.Aplicacao\\Devlivery.Aplicacao.csproj|solutionrelative:devlivery.aplicacao\\service\\projetoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69EE0176-B568-4A88-85F6-B25B814BD649}|Devlivery.Infraestrutura\\Devlivery.Infraestrutura.csproj|c:\\users\\antonioeduardosilvei\\documents\\projetoblocoengenharia\\devliveryporfoliopbapi6\\devlivery\\devlivery.infraestrutura\\context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69EE0176-B568-4A88-85F6-B25B814BD649}|Devlivery.Infraestrutura\\Devlivery.Infraestrutura.csproj|solutionrelative:devlivery.infraestrutura\\context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\AntonioEduardoSilvei\\AppData\\Local\\SourceServer\\a9f9ee41585fc7687f4429f7f88705523bd64f0b8a2f8123dcccbcce9f1f383f\\Devlivery.API\\Controllers\\AuthController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BE12906-87AC-4BEC-8AB3-839CFFCD7589}|Devlivery.Model\\Devlivery.Model.csproj|c:\\users\\antonioeduardosilvei\\documents\\projetoblocoengenharia\\devliveryporfoliopbapi6\\devlivery\\devlivery.model\\domain\\requisicao\\registrousuariomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BE12906-87AC-4BEC-8AB3-839CFFCD7589}|Devlivery.Model\\Devlivery.Model.csproj|solutionrelative:devlivery.model\\domain\\requisicao\\registrousuariomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/devliveryAPI/True/SqlTable/dbo.AspNetUsers.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B087CAF8-8396-4974-8551-5A98EE24C84E}|Devlivery.API\\Devlivery.API.csproj|c:\\users\\antonioeduardosilvei\\documents\\projetoblocoengenharia\\devliveryporfoliopbapi6\\devlivery\\devlivery.api\\devlivery.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{B087CAF8-8396-4974-8551-5A98EE24C84E}|Devlivery.API\\Devlivery.API.csproj|solutionrelative:devlivery.api\\devlivery.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B087CAF8-8396-4974-8551-5A98EE24C84E}|Devlivery.API\\Devlivery.API.csproj|c:\\users\\antonioeduardosilvei\\documents\\projetoblocoengenharia\\devliveryporfoliopbapi6\\devlivery\\devlivery.api\\configuration\\identityconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B087CAF8-8396-4974-8551-5A98EE24C84E}|Devlivery.API\\Devlivery.API.csproj|solutionrelative:devlivery.api\\configuration\\identityconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69EE0176-B568-4A88-85F6-B25B814BD649}|Devlivery.Infraestrutura\\Devlivery.Infraestrutura.csproj|c:\\users\\antonioeduardosilvei\\documents\\projetoblocoengenharia\\devliveryporfoliopbapi6\\devlivery\\devlivery.infraestrutura\\map\\usuariomap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69EE0176-B568-4A88-85F6-B25B814BD649}|Devlivery.Infraestrutura\\Devlivery.Infraestrutura.csproj|solutionrelative:devlivery.infraestrutura\\map\\usuariomap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69EE0176-B568-4A88-85F6-B25B814BD649}|Devlivery.Infraestrutura\\Devlivery.Infraestrutura.csproj|c:\\users\\antonioeduardosilvei\\documents\\projetoblocoengenharia\\devliveryporfoliopbapi6\\devlivery\\devlivery.infraestrutura\\map\\servicomap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69EE0176-B568-4A88-85F6-B25B814BD649}|Devlivery.Infraestrutura\\Devlivery.Infraestrutura.csproj|solutionrelative:devlivery.infraestrutura\\map\\servicomap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69EE0176-B568-4A88-85F6-B25B814BD649}|Devlivery.Infraestrutura\\Devlivery.Infraestrutura.csproj|c:\\users\\antonioeduardosilvei\\documents\\projetoblocoengenharia\\devliveryporfoliopbapi6\\devlivery\\devlivery.infraestrutura\\map\\propostamap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69EE0176-B568-4A88-85F6-B25B814BD649}|Devlivery.Infraestrutura\\Devlivery.Infraestrutura.csproj|solutionrelative:devlivery.infraestrutura\\map\\propostamap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69EE0176-B568-4A88-85F6-B25B814BD649}|Devlivery.Infraestrutura\\Devlivery.Infraestrutura.csproj|c:\\users\\antonioeduardosilvei\\documents\\projetoblocoengenharia\\devliveryporfoliopbapi6\\devlivery\\devlivery.infraestrutura\\map\\projetomap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69EE0176-B568-4A88-85F6-B25B814BD649}|Devlivery.Infraestrutura\\Devlivery.Infraestrutura.csproj|solutionrelative:devlivery.infraestrutura\\map\\projetomap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69EE0176-B568-4A88-85F6-B25B814BD649}|Devlivery.Infraestrutura\\Devlivery.Infraestrutura.csproj|c:\\users\\antonioeduardosilvei\\documents\\projetoblocoengenharia\\devliveryporfoliopbapi6\\devlivery\\devlivery.infraestrutura\\map\\produtomap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69EE0176-B568-4A88-85F6-B25B814BD649}|Devlivery.Infraestrutura\\Devlivery.Infraestrutura.csproj|solutionrelative:devlivery.infraestrutura\\map\\produtomap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69EE0176-B568-4A88-85F6-B25B814BD649}|Devlivery.Infraestrutura\\Devlivery.Infraestrutura.csproj|c:\\users\\antonioeduardosilvei\\documents\\projetoblocoengenharia\\devliveryporfoliopbapi6\\devlivery\\devlivery.infraestrutura\\map\\negociomap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69EE0176-B568-4A88-85F6-B25B814BD649}|Devlivery.Infraestrutura\\Devlivery.Infraestrutura.csproj|solutionrelative:devlivery.infraestrutura\\map\\negociomap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69EE0176-B568-4A88-85F6-B25B814BD649}|Devlivery.Infraestrutura\\Devlivery.Infraestrutura.csproj|c:\\users\\antonioeduardosilvei\\documents\\projetoblocoengenharia\\devliveryporfoliopbapi6\\devlivery\\devlivery.infraestrutura\\map\\amizademap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69EE0176-B568-4A88-85F6-B25B814BD649}|Devlivery.Infraestrutura\\Devlivery.Infraestrutura.csproj|solutionrelative:devlivery.infraestrutura\\map\\amizademap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BE12906-87AC-4BEC-8AB3-839CFFCD7589}|Devlivery.Model\\Devlivery.Model.csproj|c:\\users\\antonioeduardosilvei\\documents\\projetoblocoengenharia\\devliveryporfoliopbapi6\\devlivery\\devlivery.model\\domain\\requisicao\\efetuarloginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BE12906-87AC-4BEC-8AB3-839CFFCD7589}|Devlivery.Model\\Devlivery.Model.csproj|solutionrelative:devlivery.model\\domain\\requisicao\\efetuarloginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BE12906-87AC-4BEC-8AB3-839CFFCD7589}|Devlivery.Model\\Devlivery.Model.csproj|c:\\users\\antonioeduardosilvei\\documents\\projetoblocoengenharia\\devliveryporfoliopbapi6\\devlivery\\devlivery.model\\domain\\dao\\projeto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BE12906-87AC-4BEC-8AB3-839CFFCD7589}|Devlivery.Model\\Devlivery.Model.csproj|solutionrelative:devlivery.model\\domain\\dao\\projeto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BE12906-87AC-4BEC-8AB3-839CFFCD7589}|Devlivery.Model\\Devlivery.Model.csproj|c:\\users\\antonioeduardosilvei\\documents\\projetoblocoengenharia\\devliveryporfoliopbapi6\\devlivery\\devlivery.model\\domain\\dao\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BE12906-87AC-4BEC-8AB3-839CFFCD7589}|Devlivery.Model\\Devlivery.Model.csproj|solutionrelative:devlivery.model\\domain\\dao\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BE12906-87AC-4BEC-8AB3-839CFFCD7589}|Devlivery.Model\\Devlivery.Model.csproj|c:\\users\\antonioeduardosilvei\\documents\\projetoblocoengenharia\\devliveryporfoliopbapi6\\devlivery\\devlivery.model\\domain\\dao\\amizade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BE12906-87AC-4BEC-8AB3-839CFFCD7589}|Devlivery.Model\\Devlivery.Model.csproj|solutionrelative:devlivery.model\\domain\\dao\\amizade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BE12906-87AC-4BEC-8AB3-839CFFCD7589}|Devlivery.Model\\Devlivery.Model.csproj|c:\\users\\antonioeduardosilvei\\documents\\projetoblocoengenharia\\devliveryporfoliopbapi6\\devlivery\\devlivery.model\\domain\\dao\\negocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BE12906-87AC-4BEC-8AB3-839CFFCD7589}|Devlivery.Model\\Devlivery.Model.csproj|solutionrelative:devlivery.model\\domain\\dao\\negocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BE12906-87AC-4BEC-8AB3-839CFFCD7589}|Devlivery.Model\\Devlivery.Model.csproj|c:\\users\\antonioeduardosilvei\\documents\\projetoblocoengenharia\\devliveryporfoliopbapi6\\devlivery\\devlivery.model\\domain\\dao\\proposta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BE12906-87AC-4BEC-8AB3-839CFFCD7589}|Devlivery.Model\\Devlivery.Model.csproj|solutionrelative:devlivery.model\\domain\\dao\\proposta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BE12906-87AC-4BEC-8AB3-839CFFCD7589}|Devlivery.Model\\Devlivery.Model.csproj|c:\\users\\antonioeduardosilvei\\documents\\projetoblocoengenharia\\devliveryporfoliopbapi6\\devlivery\\devlivery.model\\domain\\dao\\servico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BE12906-87AC-4BEC-8AB3-839CFFCD7589}|Devlivery.Model\\Devlivery.Model.csproj|solutionrelative:devlivery.model\\domain\\dao\\servico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69EE0176-B568-4A88-85F6-B25B814BD649}|Devlivery.Infraestrutura\\Devlivery.Infraestrutura.csproj|c:\\users\\antonioeduardosilvei\\documents\\projetoblocoengenharia\\devliveryporfoliopbapi6\\devlivery\\devlivery.infraestrutura\\devlivery.infraestrutura.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{69EE0176-B568-4A88-85F6-B25B814BD649}|Devlivery.Infraestrutura\\Devlivery.Infraestrutura.csproj|solutionrelative:devlivery.infraestrutura\\devlivery.infraestrutura.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BE12906-87AC-4BEC-8AB3-839CFFCD7589}|Devlivery.Model\\Devlivery.Model.csproj|c:\\users\\antonioeduardosilvei\\documents\\projetoblocoengenharia\\devliveryporfoliopbapi6\\devlivery\\devlivery.model\\domain\\auth\\usuarioclaim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BE12906-87AC-4BEC-8AB3-839CFFCD7589}|Devlivery.Model\\Devlivery.Model.csproj|solutionrelative:devlivery.model\\domain\\auth\\usuarioclaim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BE12906-87AC-4BEC-8AB3-839CFFCD7589}|Devlivery.Model\\Devlivery.Model.csproj|c:\\users\\antonioeduardosilvei\\documents\\projetoblocoengenharia\\devliveryporfoliopbapi6\\devlivery\\devlivery.model\\domain\\auth\\userresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BE12906-87AC-4BEC-8AB3-839CFFCD7589}|Devlivery.Model\\Devlivery.Model.csproj|solutionrelative:devlivery.model\\domain\\auth\\userresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BE12906-87AC-4BEC-8AB3-839CFFCD7589}|Devlivery.Model\\Devlivery.Model.csproj|c:\\users\\antonioeduardosilvei\\documents\\projetoblocoengenharia\\devliveryporfoliopbapi6\\devlivery\\devlivery.model\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BE12906-87AC-4BEC-8AB3-839CFFCD7589}|Devlivery.Model\\Devlivery.Model.csproj|solutionrelative:devlivery.model\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Startup.cs",
+              "DocumentMoniker": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.API\\Startup.cs",
+              "RelativeDocumentMoniker": "Devlivery.API\\Startup.cs",
+              "ToolTip": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.API\\Startup.cs",
+              "RelativeToolTip": "Devlivery.API\\Startup.cs",
+              "ViewState": "AQIAADcAAAAAAAAAAAAswDwAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-24T14:09:22.175Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UsuarioService.cs",
+              "DocumentMoniker": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Aplicacao\\Service\\UsuarioService.cs",
+              "RelativeDocumentMoniker": "Devlivery.Aplicacao\\Service\\UsuarioService.cs",
+              "ToolTip": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Aplicacao\\Service\\UsuarioService.cs",
+              "RelativeToolTip": "Devlivery.Aplicacao\\Service\\UsuarioService.cs",
+              "ViewState": "AQIAAEEAAAAAAAAAAAAiwFQAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-24T00:41:36.123Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.API\\Program.cs",
+              "RelativeDocumentMoniker": "Devlivery.API\\Program.cs",
+              "ToolTip": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.API\\Program.cs",
+              "RelativeToolTip": "Devlivery.API\\Program.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAABwAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-15T23:26:50.661Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.API\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Devlivery.API\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.API\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Devlivery.API\\Controllers\\AuthController.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAADwvxkAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T03:51:57.875Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProjetoController.cs",
+              "DocumentMoniker": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.API\\Controllers\\ProjetoController.cs",
+              "RelativeDocumentMoniker": "Devlivery.API\\Controllers\\ProjetoController.cs",
+              "ToolTip": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.API\\Controllers\\ProjetoController.cs",
+              "RelativeToolTip": "Devlivery.API\\Controllers\\ProjetoController.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAAB4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-11T04:21:24.677Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.API\\appsettings.json",
+              "RelativeDocumentMoniker": "Devlivery.API\\appsettings.json",
+              "ToolTip": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.API\\appsettings.json",
+              "RelativeToolTip": "Devlivery.API\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-03-10T19:13:59.688Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Infraestrutura\\Context\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Devlivery.Infraestrutura\\Context\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Infraestrutura\\Context\\AppDbContext.cs",
+              "RelativeToolTip": "Devlivery.Infraestrutura\\Context\\AppDbContext.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAcwB8AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-10T02:59:56.471Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\AntonioEduardoSilvei\\AppData\\Local\\SourceServer\\a9f9ee41585fc7687f4429f7f88705523bd64f0b8a2f8123dcccbcce9f1f383f\\Devlivery.API\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\AppData\\Local\\SourceServer\\a9f9ee41585fc7687f4429f7f88705523bd64f0b8a2f8123dcccbcce9f1f383f\\Devlivery.API\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\AntonioEduardoSilvei\\AppData\\Local\\SourceServer\\a9f9ee41585fc7687f4429f7f88705523bd64f0b8a2f8123dcccbcce9f1f383f\\Devlivery.API\\Controllers\\AuthController.cs [Somente Leitura]",
+              "RelativeToolTip": "..\\..\\..\\..\\AppData\\Local\\SourceServer\\a9f9ee41585fc7687f4429f7f88705523bd64f0b8a2f8123dcccbcce9f1f383f\\Devlivery.API\\Controllers\\AuthController.cs [Somente Leitura]",
+              "ViewState": "AQIAAEAAAAAAAAAAAAAAwEsAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T01:56:17.936Z",
+              "EditorCaption": " [Somente Leitura]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "RegistroUsuarioModel.cs",
+              "DocumentMoniker": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Model\\Domain\\Requisicao\\RegistroUsuarioModel.cs",
+              "RelativeDocumentMoniker": "Devlivery.Model\\Domain\\Requisicao\\RegistroUsuarioModel.cs",
+              "ToolTip": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Model\\Domain\\Requisicao\\RegistroUsuarioModel.cs",
+              "RelativeToolTip": "Devlivery.Model\\Domain\\Requisicao\\RegistroUsuarioModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-16T06:08:22.01Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ProjetoService.cs",
+              "DocumentMoniker": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Aplicacao\\Service\\ProjetoService.cs",
+              "RelativeDocumentMoniker": "Devlivery.Aplicacao\\Service\\ProjetoService.cs",
+              "ToolTip": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Aplicacao\\Service\\ProjetoService.cs",
+              "RelativeToolTip": "Devlivery.Aplicacao\\Service\\ProjetoService.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-23T02:26:17.411Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ServicoMap.cs",
+              "DocumentMoniker": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Infraestrutura\\Map\\ServicoMap.cs",
+              "RelativeDocumentMoniker": "Devlivery.Infraestrutura\\Map\\ServicoMap.cs",
+              "ToolTip": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Infraestrutura\\Map\\ServicoMap.cs",
+              "RelativeToolTip": "Devlivery.Infraestrutura\\Map\\ServicoMap.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-11T03:45:35.15Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ProjetoMap.cs",
+              "DocumentMoniker": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Infraestrutura\\Map\\ProjetoMap.cs",
+              "RelativeDocumentMoniker": "Devlivery.Infraestrutura\\Map\\ProjetoMap.cs",
+              "ToolTip": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Infraestrutura\\Map\\ProjetoMap.cs",
+              "RelativeToolTip": "Devlivery.Infraestrutura\\Map\\ProjetoMap.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-11T02:54:08.002Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Devlivery.API.csproj",
+              "DocumentMoniker": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.API\\Devlivery.API.csproj",
+              "RelativeDocumentMoniker": "Devlivery.API\\Devlivery.API.csproj",
+              "ToolTip": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.API\\Devlivery.API.csproj",
+              "RelativeToolTip": "Devlivery.API\\Devlivery.API.csproj",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAswBIAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-03-18T11:22:56.838Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "dbo.AspNetUsers [Dados]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/devliveryAPI/True/SqlTable/dbo.AspNetUsers.sql",
+              "ToolTip": "dbo.AspNetUsers [Dados]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-03-18T11:03:35.128Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "UsuarioMap.cs",
+              "DocumentMoniker": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Infraestrutura\\Map\\UsuarioMap.cs",
+              "RelativeDocumentMoniker": "Devlivery.Infraestrutura\\Map\\UsuarioMap.cs",
+              "ToolTip": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Infraestrutura\\Map\\UsuarioMap.cs",
+              "RelativeToolTip": "Devlivery.Infraestrutura\\Map\\UsuarioMap.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-11T02:44:02.105Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IdentityConfig.cs",
+              "DocumentMoniker": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.API\\Configuration\\IdentityConfig.cs",
+              "RelativeDocumentMoniker": "Devlivery.API\\Configuration\\IdentityConfig.cs",
+              "ToolTip": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.API\\Configuration\\IdentityConfig.cs",
+              "RelativeToolTip": "Devlivery.API\\Configuration\\IdentityConfig.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-10T19:16:46.249Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "PropostaMap.cs",
+              "DocumentMoniker": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Infraestrutura\\Map\\PropostaMap.cs",
+              "RelativeDocumentMoniker": "Devlivery.Infraestrutura\\Map\\PropostaMap.cs",
+              "ToolTip": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Infraestrutura\\Map\\PropostaMap.cs",
+              "RelativeToolTip": "Devlivery.Infraestrutura\\Map\\PropostaMap.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAYwCEAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-11T02:45:18.96Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "AmizadeMap.cs",
+              "DocumentMoniker": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Infraestrutura\\Map\\AmizadeMap.cs",
+              "RelativeDocumentMoniker": "Devlivery.Infraestrutura\\Map\\AmizadeMap.cs",
+              "ToolTip": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Infraestrutura\\Map\\AmizadeMap.cs",
+              "RelativeToolTip": "Devlivery.Infraestrutura\\Map\\AmizadeMap.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-11T04:10:57.912Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ProdutoMap.cs",
+              "DocumentMoniker": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Infraestrutura\\Map\\ProdutoMap.cs",
+              "RelativeDocumentMoniker": "Devlivery.Infraestrutura\\Map\\ProdutoMap.cs",
+              "ToolTip": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Infraestrutura\\Map\\ProdutoMap.cs",
+              "RelativeToolTip": "Devlivery.Infraestrutura\\Map\\ProdutoMap.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-11T03:45:44.465Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "NegocioMap.cs",
+              "DocumentMoniker": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Infraestrutura\\Map\\NegocioMap.cs",
+              "RelativeDocumentMoniker": "Devlivery.Infraestrutura\\Map\\NegocioMap.cs",
+              "ToolTip": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Infraestrutura\\Map\\NegocioMap.cs",
+              "RelativeToolTip": "Devlivery.Infraestrutura\\Map\\NegocioMap.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-11T03:04:08.268Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "EfetuarLoginModel.cs",
+              "DocumentMoniker": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Model\\Domain\\Requisicao\\EfetuarLoginModel.cs",
+              "RelativeDocumentMoniker": "Devlivery.Model\\Domain\\Requisicao\\EfetuarLoginModel.cs",
+              "ToolTip": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Model\\Domain\\Requisicao\\EfetuarLoginModel.cs",
+              "RelativeToolTip": "Devlivery.Model\\Domain\\Requisicao\\EfetuarLoginModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-10T20:55:09.592Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Projeto.cs",
+              "DocumentMoniker": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Model\\Domain\\DAO\\Projeto.cs",
+              "RelativeDocumentMoniker": "Devlivery.Model\\Domain\\DAO\\Projeto.cs",
+              "ToolTip": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Model\\Domain\\DAO\\Projeto.cs",
+              "RelativeToolTip": "Devlivery.Model\\Domain\\DAO\\Projeto.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAAAsAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-14T11:46:28.597Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Produto.cs",
+              "DocumentMoniker": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Model\\Domain\\DAO\\Produto.cs",
+              "RelativeDocumentMoniker": "Devlivery.Model\\Domain\\DAO\\Produto.cs",
+              "ToolTip": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Model\\Domain\\DAO\\Produto.cs",
+              "RelativeToolTip": "Devlivery.Model\\Domain\\DAO\\Produto.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAAA4AAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-11T03:14:48.249Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Amizade.cs",
+              "DocumentMoniker": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Model\\Domain\\DAO\\Amizade.cs",
+              "RelativeDocumentMoniker": "Devlivery.Model\\Domain\\DAO\\Amizade.cs",
+              "ToolTip": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Model\\Domain\\DAO\\Amizade.cs",
+              "RelativeToolTip": "Devlivery.Model\\Domain\\DAO\\Amizade.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBAAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-11T03:51:25.529Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Proposta.cs",
+              "DocumentMoniker": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Model\\Domain\\DAO\\Proposta.cs",
+              "RelativeDocumentMoniker": "Devlivery.Model\\Domain\\DAO\\Proposta.cs",
+              "ToolTip": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Model\\Domain\\DAO\\Proposta.cs",
+              "RelativeToolTip": "Devlivery.Model\\Domain\\DAO\\Proposta.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAmwBQAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-11T03:51:11.232Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Negocio.cs",
+              "DocumentMoniker": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Model\\Domain\\DAO\\Negocio.cs",
+              "RelativeDocumentMoniker": "Devlivery.Model\\Domain\\DAO\\Negocio.cs",
+              "ToolTip": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Model\\Domain\\DAO\\Negocio.cs",
+              "RelativeToolTip": "Devlivery.Model\\Domain\\DAO\\Negocio.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-11T03:09:26.975Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Servico.cs",
+              "DocumentMoniker": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Model\\Domain\\DAO\\Servico.cs",
+              "RelativeDocumentMoniker": "Devlivery.Model\\Domain\\DAO\\Servico.cs",
+              "ToolTip": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Model\\Domain\\DAO\\Servico.cs",
+              "RelativeToolTip": "Devlivery.Model\\Domain\\DAO\\Servico.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAwAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-11T03:14:53.422Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Devlivery.Infraestrutura.csproj",
+              "DocumentMoniker": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Infraestrutura\\Devlivery.Infraestrutura.csproj",
+              "RelativeDocumentMoniker": "Devlivery.Infraestrutura\\Devlivery.Infraestrutura.csproj",
+              "ToolTip": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Infraestrutura\\Devlivery.Infraestrutura.csproj",
+              "RelativeToolTip": "Devlivery.Infraestrutura\\Devlivery.Infraestrutura.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-03-10T19:08:14.409Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "UsuarioClaim.cs",
+              "DocumentMoniker": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Model\\Domain\\Auth\\UsuarioClaim.cs",
+              "RelativeDocumentMoniker": "Devlivery.Model\\Domain\\Auth\\UsuarioClaim.cs",
+              "ToolTip": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Model\\Domain\\Auth\\UsuarioClaim.cs",
+              "RelativeToolTip": "Devlivery.Model\\Domain\\Auth\\UsuarioClaim.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-10T02:05:56.911Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "UserResponseDto.cs",
+              "DocumentMoniker": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Model\\Domain\\Auth\\UserResponseDto.cs",
+              "RelativeDocumentMoniker": "Devlivery.Model\\Domain\\Auth\\UserResponseDto.cs",
+              "ToolTip": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Model\\Domain\\Auth\\UserResponseDto.cs",
+              "RelativeToolTip": "Devlivery.Model\\Domain\\Auth\\UserResponseDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-10T02:05:40.542Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Model\\Class1.cs",
+              "RelativeDocumentMoniker": "Devlivery.Model\\Class1.cs",
+              "ToolTip": "C:\\Users\\AntonioEduardoSilvei\\Documents\\ProjetoBlocoEngenharia\\DevliveryPorfolioPBAPI6\\devlivery\\Devlivery.Model\\Class1.cs",
+              "RelativeToolTip": "Devlivery.Model\\Class1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-10T01:48:09.473Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
