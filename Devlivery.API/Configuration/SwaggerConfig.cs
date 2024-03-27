@@ -6,6 +6,7 @@ namespace Devlivery.API.Configuration
     {
         public static IServiceCollection AddSwaggerConfiguration(this IServiceCollection services)
         {
+            /*
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo()
@@ -41,7 +42,8 @@ namespace Devlivery.API.Configuration
                 });
             });
 
-            return services;
+            return services;*/
+            return null;
 
         }
     }

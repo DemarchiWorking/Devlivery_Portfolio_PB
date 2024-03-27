@@ -334,14 +334,14 @@ namespace Devlivery.Aplicacao.Service
         private string CodificarToken(ClaimsIdentity identityClaims)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(_configuration.GetConnectionString("Secret"));
+            var key = Encoding.ASCII.GetBytes(_configuration["Jwt:Key"]);
             var token = tokenHandler.CreateToken(new SecurityTokenDescriptor
             {
-                Issuer = _configuration.GetConnectionString("Issuer"),
-                Audience = _configuration.GetConnectionString("Audience"),
+                Issuer = _configuration["TokenConfiguration:Issuer"],// GetConnectionString("Issuer"),
+                Audience = _configuration["TokenConfiguration:Audience"],
                 Subject = identityClaims,
-                Expires = DateTime.UtcNow.AddHours(Convert.ToDouble(_configuration.GetConnectionString("ExpiracaoEmHoras"))),
-                // SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+                Expires = DateTime.UtcNow.AddHours(Convert.ToDouble(_configuration["TokenConfiguration:ExpireHours"])),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             });
 
             return tokenHandler.WriteToken(token);

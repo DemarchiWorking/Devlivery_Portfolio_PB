@@ -40,10 +40,14 @@ namespace Devlivery.Aplicacao.Service
         {
             try
             {
+                var usuario = await _gerenciadorAcesso.UserManager.FindByNameAsync(cadastroProjetoModel.jwt.usuario);// FindByEmailAsync(cadastroProjetoModel.jwt.usuario.ToString());
+                cadastroProjetoModel.usuarioId = usuario.Id;
                 //var autoriza = _accessor.HttpContext.Request.Headers["Authorization"].ToString();
                 //var zz = await this._context.Usuarios.FindAsync();
                 // var email = User.FindFirst("sub")?.Value;
-                //var tz = _gerenciadorUsuario.GetUserId();
+                //var tz = _gerenciadorUsuario.GetUserId("");
+
+
                 var projeto = new Projeto()
                 {
                     ProjetoId = Guid.NewGuid(),
@@ -64,7 +68,7 @@ namespace Devlivery.Aplicacao.Service
                     
                     return new Resposta<dynamic>()
                     {
-                            Titulo = "Usuário cadastrado com sucesso.",
+                            Titulo = "Projeto cadastrado com sucesso.",
                             Dados = new List<dynamic>() { "OK" },
                             Status = 200,
                             Sucesso = true
@@ -99,7 +103,7 @@ namespace Devlivery.Aplicacao.Service
             };
         }
 
-        public async Task<Resposta<dynamic>> ObterCatalogoService()
+        public async Task<Resposta<Projeto>> ObterCatalogoService()
         {
             try
             {
@@ -111,10 +115,14 @@ namespace Devlivery.Aplicacao.Service
 
                 var projetos = _context.Projeto;
 
-                var query = projetos.Select(p => new Projeto()
+                List<Projeto> query = projetos.Select(p => new Projeto()
                 {
                     Titulo = p.Titulo,
                     Descricao = p.Descricao,
+                    Link = p.Link,
+                    Objetivo = p.Objetivo, 
+                    ProjetoId = p.ProjetoId,
+                    Valor = p.Valor,
                     Foto = p.Foto,
                     Criacao = p.Criacao,
                     UsuarioId = p.UsuarioId,
@@ -122,24 +130,25 @@ namespace Devlivery.Aplicacao.Service
                 }).ToList();
 
                 //var resposta = _context.SaveChanges();
-                if (query.Count > 0)
+                if (query?.Count > 0)
                 {
 
-                    return new Resposta<dynamic>()
+                    return new Resposta<Projeto>()
                     {
                         Titulo = "Usuário cadastrado com sucesso.",
-                        Dados = new List<dynamic>() { "OK" },
+                        Dados =  query,
                         Status = 200,
                         Sucesso = true
                     };
                 }
                 else
                 {
-                    return new Resposta<dynamic>()
+                    return new Resposta<Projeto>()
                     {
                         Titulo = "Erro ao cadastrar com usuario",
                         Status = 400,
-                        Sucesso = false
+                        Sucesso = false,
+                        Dados = null
                     };
                 }
             }
@@ -152,14 +161,14 @@ namespace Devlivery.Aplicacao.Service
                 Console.WriteLine(e.Source);
                 Console.WriteLine(e.GetObjectData);
                 //_logger.Error(e, $"[ListarServicos] Fatal error on ListarServicos");
+                return new Resposta<Projeto>()
+                {
+                    Titulo = "[ObterCatalogoService]Erro 500 " + e.Message.ToString() + e.StackTrace.ToString() + e.InnerException.ToString() + e.Source.ToString() + e.GetObjectData,
+                    Dados = null,
+                    Status = 500,
+                    Sucesso = false
+                };
             }
-            return new Resposta<dynamic>()
-            {
-                Titulo = "Erro 500.",
-                Dados = null,
-                Status = 500,
-                Sucesso = false
-            };
         }
         public async Task<Resposta<dynamic>> EditarProjeto(EditarProjetoModel editarProjetoModel)
         {

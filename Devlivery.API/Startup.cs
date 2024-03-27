@@ -32,9 +32,10 @@ namespace Devlivery.API
 
             services.AddScoped<IUsuarioService, UsuarioService>();
             services.AddScoped<IProjetoService, ProjetoService>();
+            services.AddScoped<INegocioService, NegocioService>();
+            services.AddScoped<IProdutoService, ProdutoService>();
+            services.AddScoped<IServicoService, ServicoService>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-
-
 
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(appsettings.GetConnectionString("DefaultConnection")));
@@ -52,7 +53,12 @@ namespace Devlivery.API
                 options.Password.RequiredLength = 6; // Define o comprimento mínimo da senha
             });
 
-            services.AddAuthentication(options =>
+            var t = appsettings.GetValue<string>("TokenConfiguration:Issuer");
+            var b = appsettings.GetValue<string>("TokenConfiguration:Audience");
+            var a =appsettings.GetValue<string>("Jwt:Key");
+            var c = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(appsettings.GetValue<string>("Jwt:Key")));
+
+        services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;

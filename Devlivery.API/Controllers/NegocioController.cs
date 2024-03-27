@@ -6,42 +6,41 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Reflection;
-using System.Security.Claims;
 
 namespace Devlivery.API.Controllers
 {
-    [Route("api/projeto")]
-    public class ProjetoController : ControllerBase
+    [Route("api/negocio")]
+    public class NegocioController : Controller
     {
-        private readonly IProjetoService _projetoService;
+        private readonly INegocioService _negocioService;
         private readonly IConfiguration _config;
         private readonly SignInManager<Usuario> _gerenciadorAcesso;
-        public ProjetoController(
-            IProjetoService projetoService,
-            IConfiguration config,
-            SignInManager<Usuario> gerenciadorAcesso)
+
+        public NegocioController(
+        INegocioService negocioService,
+        IConfiguration config,
+        SignInManager<Usuario> gerenciadorAcesso)
         {
-            _projetoService = projetoService;
+            _negocioService = negocioService;
             _config = config;
             _gerenciadorAcesso = gerenciadorAcesso;
-        //_gerenciadorUsuario = gerenciadorUsuario;
-        //_gerenciadorAcesso = gerenciadorAcesso;
-    }
-        [HttpPost("cadastrar-projeto")]
+        }
+
+        [HttpPost("cadastrar-negocio")]
         [Authorize]
-        public async Task<IActionResult> CadastrarProjeto([FromBody] CadastroProjetoModel projeto)
+        public async Task<IActionResult> CadastrarNegocio([FromBody] CadastroNegocioModel novoNegocio)
         {
             try
             {
                 if (!ModelState.IsValid)
                     return BadRequest(ModelState);
 
-                var resultado = await _projetoService.CadastrarProjeto(projeto, "");
+                var resultado = await _negocioService.CadastrarNegocio(novoNegocio);
 
                 if (resultado.ToString() != "Succeeded")
                 {
                     List<dynamic> dados = new List<dynamic>();
-                    foreach (PropertyInfo propriedade in projeto.GetType().GetProperties())
+                    foreach (PropertyInfo propriedade in novoNegocio.GetType().GetProperties())
                     {
                         dados.Add(propriedade);
                     }
@@ -61,23 +60,22 @@ namespace Devlivery.API.Controllers
 
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-               Console.WriteLine(ex.ToString());
+                Console.WriteLine(ex.ToString());
             }
             return BadRequest();
-
         }
 
-        [HttpGet("obter-catalogo-projetos")]
-        public async Task<IActionResult> ObterCatalogoProjetos()
+        [HttpGet("obter-catalogo-negocios")]
+        public async Task<IActionResult> ObterCatalogoNegocio()
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
             //var infoUsuarioLogado = User.FindFirstValue(ClaimTypes.NameIdentifier);
             //Console.WriteLine(infoUsuarioLogado);
-            var resultado = await _projetoService.ObterCatalogoService();
+            var resultado = await _negocioService.ObterCatalogoNegocioService();
 
             if (resultado.ToString() != "Succeeded")
             {
@@ -86,35 +84,7 @@ namespace Devlivery.API.Controllers
             }
             return BadRequest();
         }
-
-        [Authorize]
-        [HttpPost("Edt")]
-        public string EditarProjeto()
-        {
-
-            EditarProjetoModel projetoEd = new EditarProjetoModel();
-            if (!ModelState.IsValid)
-                return null;// BadRequest(ModelState);
-
-            var result = _projetoService.EditarProjeto(projetoEd);
-
-            return null;
-        }
-
-        [Authorize]
-        [HttpPost("Test")]
-        public string test(string projeto)
-        {
-            return null;
-        }
-
-        [HttpGet("obter-projetosssss")]
-        [Authorize]
-        public string ObterCatalogoProjetosssss()
-        {
-            // async Task<IActionResult>[FromBody] CadastroProjetoModel projeto
-            return "Test";
-
-        }
     }
 }
+
+

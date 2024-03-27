@@ -9,13 +9,9 @@ using System.Threading.Tasks;
 
 namespace Devlivery.Aplicacao.Service.Interfaces
 {
-    public interface IProjetoService
+    public interface IProdutoService
     {
-        Task<Resposta<dynamic>> CadastrarProjeto(CadastroProjetoModel cadastroProjetoModel, string jwt);
-
-        Task<Resposta<Projeto>> ObterCatalogoService();
-
-
-        Task<Resposta<dynamic>> EditarProjeto(EditarProjetoModel editarProjetoModel);
+        Task<Resposta<Produto>> CadastrarProduto(CadastroProdutoModel produtoDto);
+        Task<Resposta<Produto>> ObterCatalogoProduto(string negocioId);
     }
 }

@@ -2,6 +2,7 @@
 using Devlivery.Model.Domain.DAO;
 using Devlivery.Model.Domain.Requisicao;
 using Devlivery.Model.Domain.Resposta;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 namespace Devlivery.API.Controllers
@@ -19,8 +20,9 @@ namespace Devlivery.API.Controllers
                 _usuarioService = usuarioService;
                 _config = config;
         }
-
+            
             [HttpPost("cadastrar-usuario")]
+            [Authorize]
             public async Task<IActionResult> CadastrarUsuario([FromBody] RegistroUsuarioModel usuarioRegistro)
             {
                 if (!ModelState.IsValid)

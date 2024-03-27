@@ -8,15 +8,14 @@ using System.Threading.Tasks;
 
 namespace Devlivery.Model.Domain.Requisicao
 {
-    public class CadastroProjetoModel
+    public class CadastroNegocioModel
     {
-        public string projetoId { get; set; }
-        public string titulo { get; set; }
-        public string objetivo { get; set; }
+        public string negocioId { get; set; }
+        public string nome { get; set; }
+        public string setor { get; set; }
         public string descricao { get; set; }
-        public string foto { get; set; }
-        public float valor { get; set; }
         public string link { get; set; }
+        public DateTime criacao { get; set; }
         public string usuarioId { get; set; }
         public Jwt jwt { get; set; }
     }
