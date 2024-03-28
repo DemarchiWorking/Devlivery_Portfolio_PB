@@ -1,5 +1,42 @@
 [
   {
+    "ContainingType": "Devlivery.API.Controllers.AmizadeController",
+    "Method": "CadastrarNegocio",
+    "RelativePath": "api/amizade/cadastrar-negocio",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "convite",
+        "Type": "Devlivery.Model.Domain.Requisicao.ConviteAmizadeModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Devlivery.API.Controllers.AmizadeController",
+    "Method": "ObterCatalogoNegocio",
+    "RelativePath": "api/amizade/obter-catalogo-negocios",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idConvite",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "resposta",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Devlivery.API.Controllers.AuthController",
     "Method": "CadastrarUsuario",
     "RelativePath": "api/identidade/cadastrar-usuario",

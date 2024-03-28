@@ -22,7 +22,6 @@ namespace Devlivery.API.Controllers
         }
             
             [HttpPost("cadastrar-usuario")]
-            [Authorize]
             public async Task<IActionResult> CadastrarUsuario([FromBody] RegistroUsuarioModel usuarioRegistro)
             {
                 if (!ModelState.IsValid)

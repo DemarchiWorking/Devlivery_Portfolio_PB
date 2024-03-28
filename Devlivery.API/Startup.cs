@@ -35,6 +35,7 @@ namespace Devlivery.API
             services.AddScoped<INegocioService, NegocioService>();
             services.AddScoped<IProdutoService, ProdutoService>();
             services.AddScoped<IServicoService, ServicoService>();
+            services.AddScoped<IAmizadeService, AmizadeService>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddDbContext<AppDbContext>(options =>

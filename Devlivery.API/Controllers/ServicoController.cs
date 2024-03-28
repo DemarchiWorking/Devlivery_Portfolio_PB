@@ -66,7 +66,7 @@ namespace Devlivery.API.Controllers
 
                 var resultado = await _servicoService.ObterCatalogoServicos(negocioId);
 
-                if (resultado.ToString() != "Succeeded")
+                if (resultado.Sucesso == true)
                 {
                     if(resultado.Dados.Count > 0)
                     {

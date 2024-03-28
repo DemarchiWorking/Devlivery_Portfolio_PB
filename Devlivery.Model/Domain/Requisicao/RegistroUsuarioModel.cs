@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Devlivery.Model.Domain.Auth;
+using System.ComponentModel.DataAnnotations;
 
 namespace Devlivery.Model.Domain.Requisicao
 {
@@ -17,6 +18,7 @@ namespace Devlivery.Model.Domain.Requisicao
         [Compare("Senha", ErrorMessage = "As senhas não conferem.")]
         public string ConfirmarSenha { get; set; }
         public string Telefone { get; set; }
+        public dynamic Jwt { get; set; }
     }
 }
 

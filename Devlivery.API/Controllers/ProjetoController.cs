@@ -38,7 +38,7 @@ namespace Devlivery.API.Controllers
 
                 var resultado = await _projetoService.CadastrarProjeto(projeto, "");
 
-                if (resultado.ToString() != "Succeeded")
+                if (resultado.Sucesso == true)
                 {
                     List<dynamic> dados = new List<dynamic>();
                     foreach (PropertyInfo propriedade in projeto.GetType().GetProperties())
@@ -79,7 +79,7 @@ namespace Devlivery.API.Controllers
             //Console.WriteLine(infoUsuarioLogado);
             var resultado = await _projetoService.ObterCatalogoService();
 
-            if (resultado.ToString() != "Succeeded")
+            if (resultado.Sucesso == true)
             {
                 // Você pode adicionar outras lógicas aqui, como enviar um email de confirmação.
                 return Ok(resultado.Dados);

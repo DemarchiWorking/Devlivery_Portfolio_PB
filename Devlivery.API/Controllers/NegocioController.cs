@@ -37,7 +37,7 @@ namespace Devlivery.API.Controllers
 
                 var resultado = await _negocioService.CadastrarNegocio(novoNegocio);
 
-                if (resultado.ToString() != "Succeeded")
+                if (resultado.Sucesso == true)
                 {
                     List<dynamic> dados = new List<dynamic>();
                     foreach (PropertyInfo propriedade in novoNegocio.GetType().GetProperties())
@@ -77,7 +77,7 @@ namespace Devlivery.API.Controllers
             //Console.WriteLine(infoUsuarioLogado);
             var resultado = await _negocioService.ObterCatalogoNegocioService();
 
-            if (resultado.ToString() != "Succeeded")
+            if (resultado.Sucesso == true)
             {
                 // Você pode adicionar outras lógicas aqui, como enviar um email de confirmação.
                 return Ok(resultado.Dados);

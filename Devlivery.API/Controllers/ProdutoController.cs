@@ -35,7 +35,7 @@ namespace Devlivery.API.Controllers
 
                 var resultado = await _produtoService.CadastrarProduto(novoProduto);
 
-                if (resultado.ToString() != "Succeeded")
+                if (resultado.Sucesso == true)
                 {
                     return Ok(resultado);
                 }
@@ -61,7 +61,7 @@ namespace Devlivery.API.Controllers
 
                 var resultado = await _produtoService.ObterCatalogoProduto(negocioId);
 
-                if (resultado.ToString() != "Succeeded")
+                if (resultado.Sucesso == true)
                 {
                     // Você pode adicionar outras lógicas aqui, como enviar um email de confirmação.
                     return Ok(resultado.Dados);
