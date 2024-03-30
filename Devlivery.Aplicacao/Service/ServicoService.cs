@@ -150,6 +150,59 @@ namespace Devlivery.Aplicacao.Service
             }
         }
 
+
+        public async Task<Resposta<Usuario>> ObterAlunos()
+        {
+            try
+            {
+                var usuario = _context.Usuarios;
+                List<Usuario> query = usuario.Select(p => new Usuario()
+                {
+                    Email = p.Email,
+                    Foto = p.Foto,  
+                    Titulo= p.Titulo,   
+                    PhoneNumber = p.PhoneNumber,
+                }).Where(u => u.Email.Contains("al.infnet")).ToList();
+
+                if (query?.Count > 0)
+                {
+                    return new Resposta<Usuario>()
+                    {
+                        Titulo = "Lista de alunos encontrada com sucesso.",
+                        Dados = query,
+                        Status = 200,
+                        Sucesso = true
+                    };
+                }
+                else
+                {
+                    return new Resposta<Usuario>()
+                    {
+                        Titulo = $"Não foi encontrada lista de usuários",
+                        Status = 400,
+                        Sucesso = false,
+                        Dados = null
+                    };
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                Console.WriteLine(e.StackTrace);
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e.InnerException);
+                Console.WriteLine(e.Source);
+                Console.WriteLine(e.GetObjectData);
+                //_logger.Error(e, $"[ListarServicos] Fatal error on ListarServicos");
+                return new Resposta<Usuario>()
+                {
+                    Titulo = " [ObterAlunos()]Erro 500 " + e.Message.ToString() + e.StackTrace.ToString() + e.InnerException.ToString() + e.Source.ToString() + e.GetObjectData,
+                    Dados = null,
+                    Status = 500,
+                    Sucesso = false
+                };
+            }
+        }
     }
 }
 

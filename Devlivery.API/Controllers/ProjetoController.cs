@@ -68,6 +68,12 @@ namespace Devlivery.API.Controllers
             return BadRequest();
 
         }
+        [HttpGet("obter-catalogo-projetoss")]
+        public string ObterCatalogoProjetoss()
+        {
+           
+            return "a";
+        }
 
         [HttpGet("obter-catalogo-projetos")]
         public async Task<IActionResult> ObterCatalogoProjetos()

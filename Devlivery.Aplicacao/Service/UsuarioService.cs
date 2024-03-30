@@ -181,7 +181,7 @@ namespace Devlivery.Aplicacao.Service
             };            
         }
 
-        public async Task<Resposta<string>> ObterUsuarioPorEmailService(string email)
+        public async Task<Resposta<Usuario>> ObterUsuarioPorEmailService(string email)
         {
             try
             {
@@ -190,27 +190,26 @@ namespace Devlivery.Aplicacao.Service
 
                 if (resposta != null)
                 {
-                    var usuario = new List<string>()
+                    Usuario usuario = new Usuario
                     {
-                        resposta.Email,
-                        resposta.Foto,
-                        resposta.Telefone,
-                        resposta.Nome,
-                        resposta.Titulo,
-                        resposta.PhoneNumber,
+                        Nome = resposta.Nome,
+                        Email = resposta.Email,
+                        UserName = resposta.UserName,
+                        PhoneNumber = resposta.PhoneNumber,
+                        Foto = resposta.Foto
                     };
 
-                    return new Resposta<string>()
+                    return new Resposta<Usuario>()
                     {
                         Titulo = "Usuario encontrado com sucesso.",
                         Status = 200,
-                        Dados = usuario,
+                        Dados = new List<Usuario>() { usuario },
                         Sucesso = true
                     };
                 }
                 else
                 {
-                    return new Resposta<string>()
+                    return new Resposta<Usuario>()
                     {
                         Titulo = "Erro ao encontrar usuario.",
                         Status = 204,
@@ -224,7 +223,7 @@ namespace Devlivery.Aplicacao.Service
             {
 
             }
-            return new Resposta<string>()
+            return new Resposta<Usuario>()
             {
                 Titulo = "[ERRO:500] Ao tentar encontrar usuario.",
                 Status = 400,

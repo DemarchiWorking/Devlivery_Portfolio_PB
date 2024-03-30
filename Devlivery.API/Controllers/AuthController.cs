@@ -5,6 +5,7 @@ using Devlivery.Model.Domain.Resposta;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 namespace Devlivery.API.Controllers
 {
     [Route("api/identidade")]
@@ -36,7 +37,7 @@ namespace Devlivery.API.Controllers
                     Telefone = usuarioRegistro.Telefone,
                     PhoneNumber = usuarioRegistro.Telefone,
                     Titulo = "Iniciante",
-                    Foto = usuarioRegistro.Senha,
+                    Foto = "",
                     Criacao = DateTime.Now,
                     PasswordHash = Guid.NewGuid().ToString()                    
                 };
@@ -66,7 +67,7 @@ namespace Devlivery.API.Controllers
             public async Task<IActionResult> Login([FromBody] EfetuarLoginModel efetuarLogin)
             {
 
-                var resultado = await _usuarioService.Login(efetuarLogin);
+            var resultado = await _usuarioService.Login(efetuarLogin);
                 //await _signInManager.PasswordSignInAsync(usuarioLogin.Email, usuarioLogin.Senha, false, true);
                 //var result = _usuarioService.CadastrarUsuario(usuario);
 
@@ -85,21 +86,39 @@ namespace Devlivery.API.Controllers
             }
 
 
-        [HttpPost("obter-usuario-por-email")]
-        public async Task<IActionResult> ObterUsuarioPorEmail(string email)
-        {
-            try
+            [HttpGet("obter-usuario-por-email")]
+            public async Task<IActionResult> ObterUsuarioPorEmail()
             {
-                var resultado = await _usuarioService.ObterUsuarioPorEmailService(email);
-                return Ok(resultado);
-            }
-            catch (Exception ex)
-            {
-            }
+                try
+                {
+                    string usuarioLogado;
+                    if (User!.Identity!.Name != null)
+                    {
+                        usuarioLogado = User!.Identity!.Name;
+                        string usuarioRole = User!.FindFirst(ClaimTypes.Role)!.Value;
+                    }
+                    else
+                    {
+                        return NotFound();
+                    }
+                    var resultado = await _usuarioService.ObterUsuarioPorEmailService(usuarioLogado);
+
+                    if(resultado?.Sucesso == true) {
+                        return Ok(resultado);
+                    }
+                    else
+                    {
+                        return BadRequest(resultado);
+                    }
+               
+                }
+                catch (Exception ex)
+                {
+                }
 
 
-            return null;
-        }
+                return null;
+            }
 
 
                 // Outros métodos, como logout, redefinição de senha, etc., podem ser adicionados aqui.

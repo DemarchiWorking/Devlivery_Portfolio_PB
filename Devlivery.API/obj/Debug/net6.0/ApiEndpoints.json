@@ -72,16 +72,10 @@
     "ContainingType": "Devlivery.API.Controllers.AuthController",
     "Method": "ObterUsuarioPorEmail",
     "RelativePath": "api/identidade/obter-usuario-por-email",
-    "HttpMethod": "POST",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "email",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -127,25 +121,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Devlivery.API.Controllers.ServicoController",
-    "Method": "CadastrarServico",
-    "RelativePath": "api/produto/cadastrar-servico",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "novoServico",
-        "Type": "Devlivery.Model.Domain.Requisicao.CadastroServicoModel",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "Devlivery.API.Controllers.ProdutoController",
     "Method": "ObterCatalogoProdutos",
-    "RelativePath": "api/produto/obter-catalogo-produtos",
+    "RelativePath": "api/produto/obter-catalogo-produtos/{negocioId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -153,23 +131,7 @@
       {
         "Name": "negocioId",
         "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Devlivery.API.Controllers.ServicoController",
-    "Method": "ObterCatalogoServicos",
-    "RelativePath": "api/produto/obter-catalogo-servicos",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "negocioId",
-        "Type": "System.String",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -222,6 +184,26 @@
   },
   {
     "ContainingType": "Devlivery.API.Controllers.ProjetoController",
+    "Method": "ObterCatalogoProjetoss",
+    "RelativePath": "api/projeto/obter-catalogo-projetoss",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Devlivery.API.Controllers.ProjetoController",
     "Method": "ObterCatalogoProjetosssss",
     "RelativePath": "api/projeto/obter-projetosssss",
     "HttpMethod": "GET",
@@ -265,6 +247,48 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "Devlivery.API.Controllers.ServicoController",
+    "Method": "CadastrarServico",
+    "RelativePath": "api/servico/cadastrar-servico",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "novoServico",
+        "Type": "Devlivery.Model.Domain.Requisicao.CadastroServicoModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Devlivery.API.Controllers.ServicoController",
+    "Method": "ObterAlunos",
+    "RelativePath": "api/servico/obter-alunos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Devlivery.API.Controllers.ServicoController",
+    "Method": "ObterCatalogoServicos",
+    "RelativePath": "api/servico/obter-catalogo-servicos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "negocioId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "Devlivery.API.Controllers.WeatherForecastController",

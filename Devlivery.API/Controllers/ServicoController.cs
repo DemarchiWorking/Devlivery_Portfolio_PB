@@ -9,7 +9,7 @@ using System.Reflection;
 
 namespace Devlivery.API.Controllers
 {
-    [Route("api/produto")]
+    [Route("api/servico")]
     public class ServicoController : ControllerBase
     {
         private readonly IServicoService _servicoService;
@@ -33,7 +33,7 @@ namespace Devlivery.API.Controllers
                 if (!ModelState.IsValid)
                     return BadRequest(ModelState);
 
-                if(novoServico?.Jwt!.usuario == null || novoServico?.Jwt!.usuario == "")
+                if (novoServico?.Jwt!.usuario == null || novoServico?.Jwt!.usuario == "")
                 {
                     return Unauthorized();
                 }
@@ -68,11 +68,41 @@ namespace Devlivery.API.Controllers
 
                 if (resultado.Sucesso == true)
                 {
-                    if(resultado.Dados.Count > 0)
+                    if (resultado.Dados.Count > 0)
                     {
                         return Ok(resultado);
                     }
-                    else 
+                    else
+                    {
+                        return NotFound(resultado);
+                    }
+                }
+                return BadRequest(resultado);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
+
+        [HttpGet("obter-alunos")]
+        public async Task<IActionResult> ObterAlunos()
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                    return BadRequest(ModelState);
+
+
+                var resultado = await _servicoService.ObterAlunos();
+
+                if (resultado.Sucesso == true)
+                {
+                    if (resultado.Dados.Count > 0)
+                    {
+                        return Ok(resultado);
+                    }
+                    else
                     {
                         return NotFound(resultado);
                     }

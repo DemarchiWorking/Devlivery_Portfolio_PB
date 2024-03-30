@@ -50,7 +50,8 @@ namespace Devlivery.API.Controllers
             }
             return BadRequest();
         }
-        [HttpGet("obter-catalogo-produtos")]
+        // [HttpGet("api/lojas/{lojaId}")]
+        [HttpGet("obter-catalogo-produtos/{negocioId}")]
         public async Task<IActionResult> ObterCatalogoProdutos(string negocioId)
         {
             try

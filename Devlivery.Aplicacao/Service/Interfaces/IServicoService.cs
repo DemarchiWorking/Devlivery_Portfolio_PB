@@ -8,5 +8,6 @@ namespace Devlivery.Aplicacao.Service.Interfaces
     {
         Task<Resposta<Servico>> CadastrarServico(CadastroServicoModel servicoDto);
         Task<Resposta<Servico>> ObterCatalogoServicos(string negocioId);
+        Task<Resposta<Usuario>> ObterAlunos();
     }
 }

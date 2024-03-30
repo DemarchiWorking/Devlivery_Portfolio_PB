@@ -24,7 +24,7 @@ namespace Devlivery.Aplicacao.Service.Interfaces
         Task<IEnumerable<Usuario>> ObterTodos();
         //IdentityUser BuscarP>orEmail(string email);
         UsuarioToken GerarToken(EfetuarLoginModel login);
-        Task<Resposta<string>> ObterUsuarioPorEmailService(string email);
+        Task<Resposta<Usuario>> ObterUsuarioPorEmailService(string email);
 
 
         Usuario BuscarPorEmail(string email);
